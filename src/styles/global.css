@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* Weatherproof Roofing Color Palette */
+  --color-brand-black: #0a0a0a;     /* Deep black from the logo background */
+  --color-brand-blue: #2a7bca;      /* The umbrella shield blue */
+  --color-brand-dark-blue: #153d65; /* A darker shade for depth/shadows */
+  --color-brand-white: #f8f9fa;     /* Crisp white for text/contrast */
+  --color-brand-gray: #1f2937;      /* Slate gray for secondary backgrounds */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-white text-brand-black font-sans;
+  }
+}

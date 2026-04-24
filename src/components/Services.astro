@@ -1,0 +1,90 @@
+---
+// src/components/Services.astro
+
+const services = [
+  {
+    title: "Single-Ply Membrane",
+    desc: "The latest flat roofing technology. We fully strip back to the joists, re-deck, and install 150mm insulation for a roof that lasts.",
+    points: ["Up to 40+ Years Lifespan", "Fully Stripped to Joists", "150mm Deck Insulation"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l10-7 10 7M2 17l10-7 10 7M2 22l10-7 10 7"></path></svg>`,
+    tag: "Premium Service"
+  },
+  {
+    title: "Emergency Repairs",
+    desc: "Is your flat roof leaking? Don't risk interior water damage. We provide rapid, reliable repairs to stop leaks fast.",
+    points: ["Available 7 Days a Week", "Fast Leak Detection", "Complete Waterproofing"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>`,
+    tag: "Urgent Response"
+  },
+  {
+    title: "Garage & Dormers",
+    desc: "Expert installations for garage roofs, dormers, and extensions. No job is too big or small. Roof light openings also available.",
+    points: ["New Roofs from £1500", "Dormer Installations", "Custom Roof Light Openings"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
+    tag: "Popular"
+  },
+  {
+    title: "Landlord Solutions",
+    desc: "Secure your property investment and protect your tenants. We offer fully certified, quality-guaranteed roofing for landlords.",
+    points: ["Protect Tenant Assets", "SSSTS & PASMA Certified", "Quality Workmanship Guaranteed"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>`,
+    tag: "Commercial"
+  }
+];
+---
+
+<section id="services" class="relative py-24 bg-brand-white px-6 border-b-4 border-brand-black z-20">
+  
+  <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto">
+    
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-brand-gray text-white px-4 py-1.5 font-bold text-sm mb-4 rounded-sm uppercase tracking-widest">
+        What We Do Best
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-brand-black uppercase italic tracking-tight mb-6">
+        Our Roofing <span class="text-brand-blue underline decoration-brand-black decoration-4 underline-offset-8">Expertise</span>
+      </h2>
+      <p class="text-lg text-gray-600 font-medium">
+        From emergency leak repairs to 40-year single-ply membranes, we utilize the latest materials to secure and protect your property.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service) => (
+        <div class="group relative bg-white border-2 border-brand-black p-8 flex flex-col h-full transition-all duration-300 shadow-[6px_6px_0px_#153d65] hover:shadow-[0px_0px_0px_#153d65] hover:translate-x-[6px] hover:translate-y-[6px]">
+          
+          <div class="absolute -top-3 right-4 bg-brand-blue text-white text-xs font-bold uppercase tracking-widest px-3 py-1 border border-brand-black shadow-[2px_2px_0px_#0a0a0a]">
+            {service.tag}
+          </div>
+
+          <div class="w-16 h-16 bg-brand-white border-2 border-brand-black text-brand-black flex items-center justify-center mb-6 shadow-[3px_3px_0px_#2a7bca] group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+            <Fragment set:html={service.icon} />
+          </div>
+
+          <h3 class="text-2xl font-bold text-brand-black mb-3 uppercase italic leading-tight">
+            {service.title}
+          </h3>
+          <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">
+            {service.desc}
+          </p>
+
+          <ul class="space-y-3 mb-8 border-t border-gray-100 pt-6">
+            {service.points.map((point) => (
+              <li class="flex items-start gap-3 text-sm font-bold text-brand-black">
+                <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <button onclick="window.openQuoteModal()" class="w-full mt-auto cursor-pointer bg-brand-black text-white py-3 font-bold uppercase tracking-widest text-sm border-2 border-brand-black hover:bg-brand-blue hover:border-brand-blue transition-colors duration-300">
+            Request Quote
+          </button>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
