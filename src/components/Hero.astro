@@ -19,38 +19,38 @@ const images = [
     ))}
   </div>
 
-  <div class="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-dark-blue/50 to-transparent z-10 pointer-events-none mix-blend-multiply"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-brand-black/60 to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-black/95 via-brand-black/60 to-transparent z-10 pointer-events-none mix-blend-multiply"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-brand-black/70 to-transparent z-10 pointer-events-none"></div>
 
   <div class="relative z-30 max-w-7xl mx-auto px-6 py-20 w-full">
     <div class="max-w-3xl">
       
-      <div class="inline-flex items-center gap-2 bg-brand-dark-blue/80 border border-brand-blue/50 text-white px-4 py-1.5 font-bold text-sm mb-6 rounded-sm uppercase tracking-widest shadow-md backdrop-blur-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-        Quality Workmanship Guaranteed
+      <div class="animate-slide-left inline-flex items-center gap-2 bg-brand-dark-blue/80 border border-brand-blue/50 text-white px-4 py-1.5 font-bold text-sm mb-6 rounded-sm uppercase tracking-widest shadow-md backdrop-blur-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        Reliable & High Quality Equipment
       </div>
       
-      <h1 class="text-5xl md:text-7xl text-white mb-6 leading-[1.1] font-bold uppercase italic drop-shadow-2xl tracking-tight">
-        The Last <span class="text-brand-blue underline decoration-white decoration-4 underline-offset-8">Flat Roof</span> You'll Ever Need.
+      <h1 class="animate-slide-up delay-300 text-5xl md:text-7xl text-white mb-6 leading-[1.1] font-bold uppercase italic drop-shadow-2xl tracking-tight">
+        Heavy-Duty <span class="text-brand-blue underline decoration-white decoration-4 underline-offset-8">Plant Hire</span> When You Need It.
       </h1>
       
-      <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl font-medium leading-relaxed drop-shadow-lg">
-        Yorkshire's trusted contractors for <span class="text-white font-bold">Single-Ply Membranes</span>, <span class="text-white font-bold">Emergency Repairs</span>, and <span class="text-white font-bold">Full Replacements</span>. Built with a lifespan of up to 40+ years.
+      <p class="animate-slide-up delay-400 text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-medium leading-relaxed drop-shadow-lg">
+        West Yorkshire's trusted local machinery hire. Featuring the powerful <span class="text-white font-bold">2.5T Volvo</span> and ultra-compact <span class="text-white font-bold">0.8T Kubota</span>. Free delivery locally!
       </p>
       
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <div class="animate-slide-right delay-500 flex flex-col sm:flex-row items-start sm:items-center gap-6">
         <button onclick="window.openQuoteModal()" class="cursor-pointer hover:-translate-y-1 bg-brand-blue text-white px-10 py-4 rounded font-bold text-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-brand-blue/40 uppercase tracking-widest border-2 border-brand-blue hover:bg-white hover:text-brand-blue hover:border-white">
-          Free Quotation
+          Hire Today
         </button>
         
         <div class="flex flex-col">
-          <span class="text-gray-300 font-bold uppercase tracking-wider text-sm mb-1 drop-shadow-md">Available 7 Days A Week</span>
+          <span class="text-gray-400 font-bold uppercase tracking-wider text-sm mb-1 drop-shadow-md">Available For Hire</span>
           <div class="flex items-center gap-3 text-white">
             <span class="flex h-3 w-3 relative">
               <span class="animate-ping absolute h-3 w-3 rounded-full bg-[#25D366] opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-[#25D366]"></span>
             </span>
-            <span class="font-bold text-lg drop-shadow-md">Emergency Repairs Ready</span>
+            <span class="font-bold text-lg drop-shadow-md">Ready For Dispatch</span>
           </div>
         </div>
       </div>
@@ -60,6 +60,43 @@ const images = [
 </section>
 
 <style>
+  /* --- Entrance Animations --- */
+  .animate-slide-left {
+    opacity: 0;
+    animation: slideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-right {
+    opacity: 0;
+    animation: slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Utility classes to sequence the animations */
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  @keyframes slideLeft {
+    0% { opacity: 0; transform: translateX(-40px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideRight {
+    0% { opacity: 0; transform: translateX(40px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  /* --- Background Ken Burns Effect --- */
   .hero-bg {
     position: absolute;
     top: 0; 

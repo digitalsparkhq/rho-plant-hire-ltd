@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Weatherproof Roofing Color Palette */
-  --color-brand-black: #0a0a0a;     /* Deep black from the logo background */
-  --color-brand-blue: #2a7bca;      /* The umbrella shield blue */
-  --color-brand-dark-blue: #153d65; /* A darker shade for depth/shadows */
-  --color-brand-white: #f8f9fa;     /* Crisp white for text/contrast */
-  --color-brand-gray: #1f2937;      /* Slate gray for secondary backgrounds */
+  /* RHO Plant Hire Color Palette */
+  --color-brand-black: #111827;       /* Deep slate/black for heavy text and borders */
+  --color-brand-blue: #18528c;        /* The signature RHO steel/navy blue */
+  --color-brand-dark-blue: #0f3863;   /* A darker blue for hover states and depth */
+  --color-brand-slate: #4b5563;       /* The stag's charcoal/slate gray */
+  --color-brand-white: #ffffff;       /* Pure white for contrast */
+  --color-brand-gray: #f3f4f6;        /* Light gray for secondary backgrounds */
 }
 
 @layer base {
